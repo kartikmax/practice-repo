@@ -1,0 +1,34 @@
+<button mat-button (click)="getStepperIndex()">mat stepper nav</button>
+<mat-stepper
+  [linear]="isLinear"
+  #stepper
+  (selectionChange)="onSelectionChange($event)"
+>
+  <mat-step [stepControl]="firstFormGroup">
+    <div>
+      <app-content></app-content>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext (click)="getStepperIndex()">
+        Next
+      </button>
+    </div>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+    <div>
+      <app-content></app-content>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext (click)="getStepperIndex()">
+        Next
+      </button>
+    </div>
+  </mat-step>
+  <mat-step>
+    <div>
+      <app-content></app-content>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext (click)="getStepperIndex()">
+        Next
+      </button>
+    </div>
+  </mat-step>
+</mat-stepper>
